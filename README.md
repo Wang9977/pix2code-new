@@ -1,4 +1,7 @@
+# fork pix2code
+更改了一些配置，训练了图片，并验证效果
 # pix2code
+
 *Generating Code from a Graphical User Interface Screenshot*
 
 [![License](http://img.shields.io/badge/license-APACHE2-blue.svg)](LICENSE.txt)
