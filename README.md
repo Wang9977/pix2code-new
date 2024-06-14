@@ -55,6 +55,7 @@ cd ../model
 
 # split training set and evaluation set while ensuring no training example in the evaluation set
 # usage: build_datasets.py <input path> <distribution (default: 6)>
+# 数据集对齐。 都是1740，训练集1566 验证集合 174
 ./build_datasets.py ../datasets/ios/all_data
 ./build_datasets.py ../datasets/android/all_data
 ./build_datasets.py ../datasets/web/all_data

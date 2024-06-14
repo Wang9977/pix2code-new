@@ -34,8 +34,11 @@ for f in os.listdir(input_path):
             path_img = "{}/{}.png".format(input_path, file_name)
             paths.append(file_name)
 
-evaluation_samples_number = len(paths) / (distribution + 1)
-training_samples_number = evaluation_samples_number * distribution
+evaluation_samples_number = len(paths) / 10
+training_samples_number = evaluation_samples_number * 9
+
+print( training_samples_number ,' training_samples_number ')
+print( evaluation_samples_number ,'evaluation_samples_number ')
 
 assert training_samples_number + evaluation_samples_number == len(paths)
 
@@ -47,6 +50,7 @@ eval_set = []
 train_set = []
 
 hashes = []
+
 for path in paths:
     if sys.version_info >= (3,):
         f = open("{}/{}.gui".format(input_path, path), 'r', encoding='utf-8')

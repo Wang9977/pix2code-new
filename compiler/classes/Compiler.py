@@ -18,9 +18,13 @@ class Compiler:
 
     def compile(self, input_file_path, output_file_path, rendering_function=None):
         dsl_file = open(input_file_path)
+
         current_parent = self.root
 
+        # print('start')
+
         for token in dsl_file:
+            # print(token)
             token = token.replace(" ", "").replace("\n", "")
 
             if token.find(self.opening_tag) != -1:
@@ -36,7 +40,8 @@ class Compiler:
                 for t in tokens:
                     element = Node(t, current_parent, self.content_holder)
                     current_parent.add_child(element)
-
+        # print('end')
         output_html = self.root.render(self.dsl_mapping, rendering_function=rendering_function)
+        # print('output_html',output_html)
         with open(output_file_path, 'w') as output_file:
             output_file.write(output_html)
